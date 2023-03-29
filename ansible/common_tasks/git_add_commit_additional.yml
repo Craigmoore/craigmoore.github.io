@@ -13,11 +13,6 @@
     args:
       chdir: "{{ ansible_env.PWD }}/../.."
 
-  - name: "git remote add origin {{ git_repo }}"
-    shell: "git remote add origin {{ git_repo }}"
-    args:
-      chdir: "{{ ansible_env.PWD }}/../.."
-
   - name: git push origin main
     shell: "git push origin main"
     args:
