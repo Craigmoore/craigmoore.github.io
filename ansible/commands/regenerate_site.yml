@@ -4,6 +4,15 @@
   vars_files:
     - ../vault/page_variables.yml
   tasks:
+
+    - name: Get current timestamp
+      set_fact:
+        current_time: "{{ ansible_date_time.iso8601 }}"
+
+    - name: Generate UUID from current timestamp
+      set_fact:
+        current_time_uuid: "{{ current_time | to_uuid }}"
+
     - name: Create HTML file
       copy:
         content: |
@@ -14,17 +23,10 @@
           </head>
           <body>
             <h1>{{ body_page_title }}</h1>
+            <h2>Build: {{ current_time_uuid }}</h2>
           </body>
           </html>
         dest: ../../index.html
-
-    - name: Get current timestamp
-      set_fact:
-        current_time: "{{ ansible_date_time.iso8601 }}"
-
-    - name: Generate UUID from current timestamp
-      set_fact:
-        current_time_uuid: "{{ current_time | to_uuid }}"
 
     # Perform rest of git commands
     - name: git add commit additional commands
