@@ -4,7 +4,7 @@
       chdir: "{{ ansible_env.PWD }}/../.."
 
   - name: "git commit -m {{ current_time_uuid }}"
-    shell: "git commit -m \"first commit\""
+    shell: "git commit -m \"{{ current_time_uuid }}\""
     args:
       chdir: "{{ ansible_env.PWD }}/../.."
 
