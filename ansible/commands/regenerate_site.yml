@@ -27,3 +27,4 @@
     # Perform rest of git commands
     - name: git add commit additional commands
       include_tasks: ../common_tasks/git_add_commit_additional.yml
+      

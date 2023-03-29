@@ -1,0 +1,16 @@
+---
+- name: Generate HTML file
+  hosts: localhost
+  tasks:
+
+    - name: Get current timestamp
+      set_fact:
+        current_time: "{{ ansible_date_time.iso8601 }}"
+
+    - name: Generate UUID from current timestamp
+      set_fact:
+        current_time_uuid: "{{ current_time | to_uuid }}"
+
+    - debug:
+        var: current_time_uuid
+      
