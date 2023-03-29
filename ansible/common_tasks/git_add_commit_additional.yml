@@ -1,0 +1,24 @@
+  - name: git add .
+    shell: "git add ."
+    args:
+      chdir: "{{ ansible_env.PWD }}/../.."
+
+  - name: "git commit -m {{ current_time_uuid }}"
+    shell: "git commit -m \"first commit\""
+    args:
+      chdir: "{{ ansible_env.PWD }}/../.."
+
+  - name: git branch -M main
+    shell: "git branch -M main"
+    args:
+      chdir: "{{ ansible_env.PWD }}/../.."
+
+  - name: "git remote add origin {{ git_repo }}"
+    shell: "git remote add origin {{ git_repo }}"
+    args:
+      chdir: "{{ ansible_env.PWD }}/../.."
+
+  - name: git push origin main
+    shell: "git push origin main"
+    args:
+      chdir: "{{ ansible_env.PWD }}/../.."

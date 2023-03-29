@@ -1,0 +1,29 @@
+---
+- name: Generate HTML file
+  hosts: localhost
+  tasks:
+    - name: Create HTML file
+      copy:
+        content: |
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>My HTML file</title>
+          </head>
+          <body>
+            <h1>Hello, World!</h1>
+          </body>
+          </html>
+        dest: ../../index.html
+
+    - name: Get current timestamp
+      set_fact:
+        current_time: "{{ ansible_date_time.iso8601 }}"
+
+    - name: Generate UUID from current timestamp
+      set_fact:
+        current_time_uuid: "{{ current_time | to_uuid }}"
+
+    # Perform rest of git commands
+    - name: git add commit additional commands
+      include_tasks: ../common_tasks/git_add_commit_additional.yml
