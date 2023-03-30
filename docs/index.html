@@ -5,12 +5,13 @@
   </head>
   <body>
     <h1>Hello, World!</h1>
-    <h2>Build: 38f76037-f9c1-58ae-b344-88a99f1202f5</h2>
+    <h2>Build: 5f971258-ea3b-573e-ba89-bee2291969a9</h2>
     <h2>Rules of building on github pages :</h2>
     <ol>
       <li>Create an entirely public repository on github.com.</li>
       <li>No server side component so pages must be regenerated each time.</li>
       <li>Private files may be uploaded but they will need to be encrypted (e.g. using Ansible Vault)</li>
+      <li>This means API keys etc will need to be stored in Ansible Vault before being consumed by Ansible, they cannot be made public due to abuse potential.</li>
       <li>No mysql or other database, so data will need to be stored in sqlite or equivalent, or json file to be queried client side.</li>
     </ol>
   </body>
