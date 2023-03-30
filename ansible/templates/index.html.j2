@@ -4,6 +4,12 @@
     <title>{{ html_page_title }}</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js" integrity="sha512-+Ru50BzEpZjlFzVnjSmJfYFPFfY2hS0Kjlu/IvqaJoux7maF5lJrRVUJWJ2LevPls7rd242GLbWEt+zAo4OVVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+      #sceneContainer {
+        width: 800px;
+        height: 600px;
+      }
+    </style>
   </head>
   <body>
     <div>
@@ -42,7 +48,7 @@
         Sample scene "CityGPT" 
       </h2>
     </div>
-    <div>
+    <div id="sceneContainer">
       <a-scene physics="debug: true" embedded>
         <!-- Sky -->
         <a-sky color="#87CEEB"></a-sky>
