@@ -76,6 +76,23 @@
           <a-entity id="buildings">
             <!-- Add 100 buildings with random positions and sizes -->
             <script>
+
+              // Get the current URL and its parameters
+              const currentUrl = new URL(window.location.href);
+              const currentParams = currentUrl.searchParams;
+
+              // Check if the "seed" parameter is present
+              if (!currentParams.has('seed')) {
+                // Add the "seed" parameter with a default value of 0
+                currentParams.set('seed', '0');
+
+                // Update the URL with the additional "seed" parameter
+                currentUrl.search = currentParams.toString();
+
+                // Redirect to the updated URL
+                window.location.replace(currentUrl.href);
+              }
+
               const NUM_BUILDINGS = 100;
               const BUILDING_COLORS = ["#A9A9A9", "#808080", "#696969"];
               const buildingsEntity = document.querySelector("#buildings");
