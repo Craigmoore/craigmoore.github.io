@@ -26,7 +26,7 @@
             <h2>Build: {{ current_time_uuid }}</h2>
           </body>
           </html>
-        dest: ../../index.html
+        dest: ../../build/index.html
 
     # Perform rest of git commands
     - name: git add commit additional commands
