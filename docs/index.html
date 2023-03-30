@@ -2,13 +2,15 @@
 <html>
   <head>
     <title>My HTML file</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js" integrity="sha512-+Ru50BzEpZjlFzVnjSmJfYFPFfY2hS0Kjlu/IvqaJoux7maF5lJrRVUJWJ2LevPls7rd242GLbWEt+zAo4OVVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
     <div>
       <h1>Hello, World!</h1>
     </div>
     <div>
-    <h2>Build: a44ce1fb-3b13-5121-989b-465f4db016ae</h2>
+    <h2>Build: 70b317cb-b1eb-531a-b9ed-e0f80d9432b2</h2>
     </div>
     <div>
       <h2>Rules of building on github pages :</h2>
@@ -34,6 +36,60 @@
       <p>
         The page when loaded into Banter will load as a space.
       </p>
+    </div>
+    <div>
+      <h2>
+        Sample scene "CityGPT" 
+      </h2>
+    </div>
+    <div>
+      <a-scene physics="debug: true" embedded>
+        <!-- Sky -->
+        <a-sky color="#87CEEB"></a-sky>
+  
+        <a-entity position="0 1.6 0">
+       
+          <!-- Ground -->
+          <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#9ACD32" sq-collider></a-plane>
+  
+          <!-- Buildings -->
+          <a-entity id="buildings">
+            <!-- Add 100 buildings with random positions and sizes -->
+            <script>
+              const NUM_BUILDINGS = 100;
+              const BUILDING_COLORS = ["#A9A9A9", "#808080", "#696969"];
+              const buildingsEntity = document.querySelector("#buildings");
+              const queryString = window.location.search;
+              const urlParams = new URLSearchParams(queryString);
+              const seed = urlParams.get('seed') || Math.floor(Math.random() * 1000000);
+              console.log(`Using seed ${seed}`);
+              const random = new Math.seedrandom(seed);
+  
+              for (let i = 0; i < NUM_BUILDINGS; i++) {
+                const building = document.createElement("a-box");
+                const x = (random() - 0.5) * 50;
+                const z = (random() - 0.5) * 50;
+                const height = Math.ceil(random() * 10);
+                const width = Math.ceil(random() * 5);
+                const depth = Math.ceil(random() * 5);
+                const color = BUILDING_COLORS[Math.floor(random() * BUILDING_COLORS.length)];
+                building.setAttribute("position", `${x} ${height / 2} ${z}`);
+                building.setAttribute("height", height);
+                building.setAttribute("width", width);
+                building.setAttribute("depth", depth);
+                building.setAttribute("color", color);
+                building.setAttribute("sq-collider", "sq-collider");
+                buildingsEntity.appendChild(building);
+              }
+            </script>
+          </a-entity>
+  
+        </a-entity>
+        <!-- Camera -->
+        <a-entity position="0 1.6 0">
+          <a-camera></a-camera>
+        </a-entity>
+      </a-scene>
     </div>
   </body>
 </html>
