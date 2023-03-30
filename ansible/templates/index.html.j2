@@ -4,16 +4,36 @@
     <title>{{ html_page_title }}</title>
   </head>
   <body>
-    <h1>{{ body_page_title }}</h1>
+    <div>
+      <h1>{{ body_page_title }}</h1>
+    </div>
+    <div>
     <h2>Build: {{ current_time_uuid }}</h2>
-    <h2>Rules of building on github pages :</h2>
-    <ol>
-      <li>Create an entirely public repository on github.com.</li>
-      <li>No server side component so pages must be regenerated each time.</li>
-      <li>Private files may be uploaded but they will need to be encrypted (e.g. using Ansible Vault)</li>
-      <li>This means API keys etc will need to be stored in Ansible Vault before being consumed by Ansible, they cannot be made public due to abuse potential.</li>
-      <li>No mysql or other database, so data will need to be stored in sqlite or equivalent, or json file to be queried client side.</li>
-      <li>As the build is automatic, the commit message has been set to the build id.</li>
-    </ol>
+    </div>
+    <div>
+      <h2>Rules of building on github pages :</h2>
+      <ol>
+        <li>Create an entirely public repository on github.com.</li>
+        <li>No server side component so pages must be regenerated each time.</li>
+        <li>Private files may be uploaded but they will need to be encrypted (e.g. using Ansible Vault)</li>
+        <li>This means API keys etc will need to be stored in Ansible Vault before being consumed by Ansible, they cannot be made public due to abuse potential.</li>
+        <li>No mysql or other database, so data will need to be stored in sqlite or equivalent, or json file to be queried client side.</li>
+        <li>As the build is automatic, the commit message has been set to the build id.</li>
+      </ol>
+    </div>
+    <div>
+      <h2>
+        Rules of creating a Banter space
+      </h2>
+      <p>
+        <a href="https://bantervr.com/">Banter</a> is a Unity-based Social VR platform that users can create worlds built with Unity Assets and <a href="https://aframe.io/">A-Frame</a>.
+      </p>
+      <p>
+        To build a space and host it on your github page, the assets of the scene need to be added to the repository and A-Frame needs to be added to the HTML page.
+      </p>
+      <p>
+        The page when loaded into Banter will load as a space.
+      </p>
+    </div>
   </body>
 </html>
