@@ -13,19 +13,9 @@
       set_fact:
         current_time_uuid: "{{ current_time | to_uuid }}"
 
-    - name: Create HTML file
-      copy:
-        content: |
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <title>{{ html_page_title }}</title>
-          </head>
-          <body>
-            <h1>{{ body_page_title }}</h1>
-            <h2>Build: {{ current_time_uuid }}</h2>
-          </body>
-          </html>
+    - name: Build index html page
+      ansible.builtin.template:
+        src: ../templates/index.html.j2
         dest: ../../docs/index.html
 
     # Perform rest of git commands
