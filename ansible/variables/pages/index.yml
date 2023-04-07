@@ -6,8 +6,8 @@ index:
         -
           url: index.html
           link: Home
-      title: "This is a sample page while building out this static Ansible sitebuilder project."
-      header: "Hello World"
+      title: "Hello World"
+      header: "This is a sample page while building out this static Ansible sitebuilder project."
       header_image:
         src: "./images/shoseki.png"
         alt: "Background header for Shoseki, a fractal that was pushed through Googles' Deep Dream"
