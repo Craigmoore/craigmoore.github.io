@@ -17,7 +17,7 @@ social_media_links:
     url: "mailto:craigmoore@flashygraphics.co.uk"
     link: email
 navigate_row: "Site Navigation Row"
-footer: "Site Navigation Footer"
+footer: "Copyright © 2023"
 info:
   -
     markup: "Here's a sample info!"
