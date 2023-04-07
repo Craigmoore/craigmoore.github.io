@@ -6,7 +6,7 @@ index:
         -
           url: index.html
           link: Home
-      title: "Hello World"
+      title: "This is a sample page while building out this static Ansible sitebuilder project."
       header: "Hello World"
       header_image:
         src: "./images/shoseki.png"
