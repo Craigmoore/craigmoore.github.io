@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ page.content.title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/output.css" rel="stylesheet">
+  </head>
+  <body class="container mx-auto">
+    <div class="p-2 bg-black">
+      <span class="p-2 text-white inline-block">
+        <a href="{{ site.site_url }}">{{ site.header }}</a>
+      </span>
+      <span class="p-2 text-white inline-block float-right ">
+        Site Build: {{ current_time_uuid }}
+      </span>
+      <span class="p-2 text-white inline-block float-right ">
+        {% for item in site.social_media_links %}
+          <a href="{{ item.url }}" class="p-2">{{ item.link }}</a>
+        {% endfor %}
+      </span>
+    </div>
+    <div class="p-2 rounded-lg">
+      <div class="p-2">{{ site.navigate_row}}</div>
+    </div>
+    <div class="grid p-2 gap-2">
+      {% for item in site.info %}
+        <div class="btn-info p-2 rounded-lg">{{ item.markup }}</div>
+      {% endfor %}
+      {% for item in site.success %}
+        <div class="btn-success p-2 rounded-lg">{{ item.markup }}</div>
+      {% endfor %}
+      {% for item in site.warning %}
+        <div class="btn-warning p-2 rounded-lg">{{ item.markup }}</div>
+      {% endfor %}
+      {% for item in site.error %}
+        <div class="btn-error p-2 rounded-lg">{{ item.markup }}</div>
+      {% endfor %}
+    </div>
+    <div class="p-2">
+      <span class="p-2">
+        {% for item in page.content.breadcrumbs %}
+          <a href="{{ item.url }}">{{ item.link }}</a>
+        {% endfor %}
+      </span>
+    </div>
+    <div class="p-2">
+      <span class="p-2">
+        {{ page.content.header }}
+      </span>
+    </div>
+    <div class="content p-2 prose">
+      <h1 class="p-2">{{ page.content.title }}</h1>
+      {% if page.content.header_image|length %}
+      <img src="{{ page.content.header_image.src }}" alt="{{ page.content.header_image.alt }}" class="mx-auto" />
+      {% endif %}
+      {% if page.content.content|length %}
+        {{ page.content.content }}
+      {% endif %}
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-12 p-2 gap-2 grid-flow-row-dense">
+      <div class="bg-slate-200 rounded-lg p-2 col-span-4">Column 1</div>
+      <div class="bg-slate-400 rounded-lg p-2 col-span-4">Column 2</div>
+      <div class="bg-slate-600 rounded-lg p-2 col-span-4">Column 3</div>
+    </div>
+    <div class="p-2">
+      <span class="p-2">{{ page.content.footer }}</span>
+    </div>
+    <div class="p-2 bg-black">
+      <span class="p-2 ">
+        {{ site.footer }}
+      </span>
+    </div>
+  </body>
+</html>

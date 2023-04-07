@@ -1,0 +1,9 @@
+  - name: Install typescript
+    shell: "npm install"
+    args:
+      chdir: "{{ ansible_env.PWD }}/../../tailwind"
+
+  - name: Run tailwind CSS generation
+    shell: "npx tailwindcss -i ./src/input.css -o ../docs/css/output.css"
+    args:
+      chdir: "{{ ansible_env.PWD }}/../../tailwind"

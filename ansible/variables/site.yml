@@ -1,0 +1,26 @@
+site_url: "http://craigmoore.github.io"
+header: "craigmoore.github.io"
+social_media_links:
+  -
+    url: https://twitter.com/Shoseki
+    link: Twitter
+  -
+    url: https://www.twitch.tv/shoseki
+    link: Twitch
+  -
+    url: "mailto:craigmoore@flashygraphics.co.uk"
+    link: Email
+navigate_row: "Site Navigation Row"
+footer: "Site Navigation Footer"
+info:
+  -
+    markup: "Here's a sample info!"
+success:
+  -
+    markup: "Here's a sample success!"
+warning:
+  -
+    markup: "Here's a sample warning!"
+error: 
+  -
+    markup: "Here's a sample error!"

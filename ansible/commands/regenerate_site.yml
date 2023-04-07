@@ -1,9 +1,12 @@
 ---
 - name: Generate HTML file
   hosts: localhost
-  vars_files:
-    - ../vault/page_variables.yml
   tasks:
+
+    - name: Get site variables
+      ansible.builtin.include_vars:
+        file: ../variables/site.yml
+        name: site
 
     - name: Get current timestamp
       set_fact:
@@ -13,12 +16,33 @@
       set_fact:
         current_time_uuid: "{{ current_time | to_uuid }}"
 
-    - name: Build index html page
-      ansible.builtin.template:
-        src: ../templates/index.html.j2
-        dest: ../../docs/index.html
+    - debug:
+        var: current_time_uuid
 
-    # Perform rest of git commands
+    - name: Get list of page files in pages folder
+      ansible.builtin.find:
+        paths: ../variables/pages
+      register: page_files
+
+    - name: Include page variable files
+      ansible.builtin.include_vars:
+        file: "{{ item.path }}"
+      loop: "{{ page_files.files }}"
+      register: included_vars
+
+    - name: Concatenate variables into a single dictionary
+      set_fact:
+        pages_by_key: "{{ included_vars.results | map(attribute='ansible_facts') | list | combine }}"
+
+    - name: Generate pages
+      include_tasks: ../common_tasks/generate_pages.yml
+      with_dict: "{{ pages_by_key }}"
+      loop_control:
+        loop_var: page_dict
+
+    - name: Perform tailwind related tasks
+      include_tasks: ../common_tasks/install_and_run_tailwind_styling.yml
+
     - name: git add commit additional commands
       include_tasks: ../common_tasks/git_add_commit_additional.yml
       

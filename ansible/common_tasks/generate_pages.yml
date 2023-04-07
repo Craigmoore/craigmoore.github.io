@@ -1,0 +1,8 @@
+- name: Set page fact for {{ page_dict.key }}
+  set_fact:
+    page: "{{ page_dict.value }}"
+
+- name: Build {{ page.url }}
+  ansible.builtin.template:
+    src: "../templates/{{ page.template }}"
+    dest: "../../docs/{{ page.url }}"
