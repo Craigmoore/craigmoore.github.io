@@ -2,14 +2,20 @@ site_url: "http://craigmoore.github.io"
 header: "craigmoore.github.io"
 social_media_links:
   -
+    url: https://github.com/Craigmoore
+    link: github
+  -
+    url: https://www.linkedin.com/in/craigalexandermoore/
+    link: linkedIn
+  -
     url: https://twitter.com/Shoseki
-    link: Twitter
+    link: twitter
   -
     url: https://www.twitch.tv/shoseki
-    link: Twitch
+    link: twitch
   -
     url: "mailto:craigmoore@flashygraphics.co.uk"
-    link: Email
+    link: email
 navigate_row: "Site Navigation Row"
 footer: "Site Navigation Footer"
 info:
