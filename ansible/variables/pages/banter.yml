@@ -6,7 +6,8 @@ banter:
         -
           url: index.html
           link: Home
-        - url: banter.html
+        -
+          url: banter.html
           link: Banter
       title: "Banter"
       header: "This page is about Banter, the social VR app from SideQuest!"
