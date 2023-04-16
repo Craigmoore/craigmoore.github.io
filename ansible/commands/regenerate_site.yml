@@ -34,6 +34,12 @@
       set_fact:
         pages_by_key: "{{ included_vars.results | map(attribute='ansible_facts') | list | combine }}"
 
+    - name: Generate menu links
+      include_tasks: ../common_tasks/generate_menu_links.yml
+      with_dict: "{{ pages_by_key }}"
+      loop_control:
+        loop_var: page_dict
+
     - name: Generate pages
       include_tasks: ../common_tasks/generate_pages.yml
       with_dict: "{{ pages_by_key }}"

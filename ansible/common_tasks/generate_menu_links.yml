@@ -1,0 +1,15 @@
+- name: Set page fact for {{ page_dict.key }}
+  set_fact:
+    page: "{{ page_dict.value }}"
+
+- name: Create new templated link
+  set_fact:
+    new_menu_link: "<a href=\"{{ page.url }}\">{{ page.content.title }}</a>"
+
+# - set_fact:
+#     "{{ page_dict.key }}" : "{{ new_menu_link }}"
+
+- name: Combine new link into page_menu_links variable
+  set_fact:
+    page_menu_links:
+      "{{ page_menu_links | default({}) | combine({\"{{ page_dict.key }}\" : \"{{ new_menu_link }}\"}) }}"
