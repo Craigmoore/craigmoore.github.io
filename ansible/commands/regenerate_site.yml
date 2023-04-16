@@ -40,6 +40,10 @@
       loop_control:
         loop_var: page_dict
 
+    - name: Debug variable within Jinja2 template
+      debug:
+        msg: "{{ page_menu_links }}"
+
     - name: Generate pages
       include_tasks: ../common_tasks/generate_pages.yml
       with_dict: "{{ pages_by_key }}"
