@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Drupal for VR</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/output.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js" integrity="sha512-U9dKDqsXAE11UA9kZ0XKFyZ2gQCj+3AwZdBMni7yXSvWqLFEj8C1s7wRmWl9iyij8d5zb4wm56j4z/JVEwS77g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css" integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body class="container mx-auto">
+    <div class="p-2 bg-black">
+      <span class="p-2 text-white inline-block">
+        <a href="http://craigmoore.github.io">craigmoore.github.io</a>
+      </span>
+      <span class="p-2 text-white inline-block float-right ">
+        site build: e17244da-65b4-5c8c-838d-4b02bb737e4e
+      </span>
+      <span class="p-2 text-white inline-block float-right ">
+                  <a href="https://github.com/Craigmoore" class="p-2">github</a>
+                  <a href="https://www.linkedin.com/in/craigalexandermoore/" class="p-2">linkedIn</a>
+                  <a href="https://twitter.com/Shoseki" class="p-2">twitter</a>
+                  <a href="https://www.twitch.tv/shoseki" class="p-2">twitch</a>
+                  <a href="mailto:craigmoore@flashygraphics.co.uk" class="p-2">email</a>
+              </span>
+    </div>
+    <div class="p-2 rounded-lg">
+      <div class="p-2">
+        <a href="index.html">Hello World</a> | <a href="banter.html">Banter</a> | <a href="github-pages.html">Github Pages</a> | <a href="drupal_for_vr.html">Drupal for VR</a>
+      </div>
+    </div>
+    <div class="grid p-2 gap-2">
+              <div class="btn-info p-2 rounded-lg">Craig Moore is <a href="https://www.linkedin.com/in/craigalexandermoore/">currently available to hire</a> for Drupal and Typescript contract work.</div>
+                    <div class="btn-success p-2 rounded-lg">Here's a sample success!</div>
+                    <div class="btn-warning p-2 rounded-lg">Here's a sample warning!</div>
+                    <div class="btn-error p-2 rounded-lg">Here's a sample error!</div>
+          </div>
+    <div class="p-2">
+      <span class="p-2">
+                  <a href="index.html">Home</a>
+                  <a href="drupal_for_vr.html">Drupal for VR</a>
+              </span>
+    </div>
+    <div class="p-2">
+      <span class="p-2">
+        Using a CMS for creating VR content
+      </span>
+    </div>
+    <div class="content p-2 prose">
+      <h1 class="p-2">Drupal for VR</h1>
+            <img src="./images/drupal_for_vr/drupal-banter.png" alt="Logo combination of Drupal and Banter" class="mx-auto" />
+                    <div>
+  <h2>Building VR Content with Drupal for the Banter VR application</h2>
+  <p>
+    <a href="https://bantervr.com/">Banter</a> is a Social VR platform, please see the <a href="https://craigmoore.github.io/banter.html">Banter page</a> for more information.
+  </p>
+  <p>
+    As the spaces built within Banter are entirely web-based, Drupal can provide a unique and powerful way to build such content using ThreeJS and A-Frame.
+  </p>
+  <p>
+    This is a project currently in progress, so this page includes some example screenshots :
+  </p>
+  <h2>
+    Configuring "ActiveObjects" within Drupal
+  </h2>
+  <p>
+    An "ActiveObject" is an abstract concept that represents an object that will be represented at runtime within a ThreeJS or Banter Scene. Within Drupal, the fields required to construct an ActiveObject represent the fields to store the data against entities within Drupal. By default, we have created an entity of type "Node" and a bundle of type "ActiveObject", and we have attached various "ActiveObject Components" (represented in Drupal as fields) to the entity bundle.
+  </p>
+  <p>
+    <a href="./images/drupal_for_vr/active-object-configuration.png" data-lightbox="active-object-configuration" data-title="Screenshot of a web page with the ThreeJS component configuration form exposed.">
+      <img src="./images/drupal_for_vr/active-object-configuration.png" alt="Screenshot of a web page with the ThreeJS component configuration form exposed." />
+    </a>
+  </p>
+  <h2>
+    Drupal Fields as attached to an entity bundle
+  </h2>
+  <p>
+    <a href="./images/drupal_for_vr/active-object-fields.png" data-lightbox="active-object-fields" data-title="Screenshot of a web page with the Drupal Fields of ActiveObject Fields attached.">
+      <img src="./images/drupal_for_vr/active-object-fields.png" alt="Screenshot of a web page with the Drupal Fields of ActiveObject Fields attached." />
+    </a>
+  </p>
+  <h2>
+    Create a scene with Mr Doobs ThreeJS editor
+  </h2>
+  <p>
+    <a href="./images/drupal_for_vr/mrdoobs-three-js-editor.png" data-lightbox="mrdoobs-three-js-editor" data-title="Screenshot of a web page with Mr Doobs ThreeJS Editor." />          
+      <img src="./images/drupal_for_vr/mrdoobs-three-js-editor.png" alt="Screenshot of a web page with Mr Doobs ThreeJS Editor." />
+    </a>
+  </p>
+  <p>
+    ThreeJS content can be created and laid out in 3D using Mr Doobs ThreeJS and then exported as a Scene JSON file.
+  </p>
+  <h2>
+    Importing the scene into Drupal
+  </h2>
+  <p>
+    The Scene can then be imported into Drupal using a Drush command.
+  </p>
+  <p>
+    <a href="./images/drupal_for_vr/drush-scene-import.png" data-lightbox="drush-scene-import" data-title="Screenshot of VSCode using a drush command to import a scene into Drupal" />
+      <img src="./images/drupal_for_vr/drush-scene-import.png" alt="Screenshot of VSCode using a drush command to import a scene into Drupal" />
+    </a>
+    <a href="./images/drupal_for_vr/mrdoobs-three-js-imported-objects.png" data-lightbox="mrdoobs-three-js-imported-objects" data-title="Screenshot of a web page within Drupal showing ActiveObject entities as imported into Drupal" />
+      <img src="./images/drupal_for_vr/mrdoobs-three-js-imported-objects.png" alt="Screenshot of a web page within Drupal showing ActiveObject entities as imported into Drupal" />
+    </a>
+  </p>
+  <h2>
+    Viewing the content within Drupal
+  </h2>
+  <p>
+    Once the objects have been imported into Drupal, they can be edited using normal entity edit forms and viewed on a page. At the moment, a typical ThreeJS formatter has been implemented, and then that formatter has been extended to integrate with A-Frame (and thus the Banter application).
+  </p>
+  <p>
+    This is how the scene looks in a piece of Drupal content :
+  </p>
+  <p>
+    <a href="./images/drupal_for_vr/active-objects-displayed-on-page.png" data-lightbox="active-objects-displayed-on-page" data-title="Screenshot of a web page showing a 3D scene as loaded by ThreeJS / Aframe for consumption on the web" />
+      <img src="./images/drupal_for_vr/active-objects-displayed-on-page.png" alt="Screenshot of a web page showing a 3D scene as loaded by ThreeJS / Aframe for consumption on the web" />
+    </a>
+  </p>
+  <p>
+    This is how the scene looks in Banter :
+  </p>
+  <p>
+    <a href="./images/drupal_for_vr/mrdoobs-imported-objects-in-banter.png" data-lightbox="mrdoobs-imported-objects-in-banter" data-title="Screenshot of Banter showing the 3D scene" />
+      <img src="./images/drupal_for_vr/mrdoobs-imported-objects-in-banter.png" alt="Screenshot of Banter showing the 3D scene" />
+    </a>
+  </p>
+  <h2>
+    Using GLTF assets
+  </h2>
+  <p>
+    ThreeJS and Banter support many file formats, that can be uploaded into Drupal, mapped to the ActiveObject field using the Token Module and displayed. This first image shows the creation of a piece of content representing a GLTF model, and the following image shows the "Khronos Duck" imported into Drupal as a file field and mapped using [node:field_activeobject_file:entity:url] as the Token mapping. Token Replace is applied during use of the JSON:API.
+  </p>
+  <p>
+    <a href="./images/drupal_for_vr/creating-duck-gltf-active-object.png" data-lightbox="creating-duck-gltf-active-object" data-title="Screenshot of a web page within Drupal showing the creation of an ActiveObject representing the Khronos Duck" />
+      <img src="./images/drupal_for_vr/creating-duck-gltf-active-object.png" alt="Screenshot of a web page within Drupal showing the creation of an ActiveObject representing the Khronos Duck" />
+    </a>
+    <a href="./images/drupal_for_vr/creating-duck-active-object-2-showing-mapping.png" data-lightbox="creating-duck-active-object-2-showing-mapping" data-title="Screenshot of a web page within Drupal showing applying a token to map a file field" />
+      <img src="./images/drupal_for_vr/creating-duck-active-object-2-showing-mapping.png" alt="Screenshot of a web page within Drupal showing applying a token to map a file field" />
+    </a>
+  </p>
+  <h2>
+    <a href="./images/drupal_for_vr/riding-a-duck-in-banter.png" data-lightbox="riding-a-duck-in-banter" data-title="Screenshot of the Banter application showing the user on the back of the Khronos duck" />
+      <img src="./images/drupal_for_vr/riding-a-duck-in-banter.png" alt="Screenshot of the Banter application showing the user on the back of the Khronos duck" />
+    </a>
+  </h2>
+</div>
+
+          </div>
+    <div class="grid grid-cols-1 sm:grid-cols-12 p-2 gap-2 grid-flow-row-dense">
+      <div class="bg-slate-200 rounded-lg p-2 col-span-4">Column 1</div>
+      <div class="bg-slate-400 rounded-lg p-2 col-span-4">Column 2</div>
+      <div class="bg-slate-600 rounded-lg p-2 col-span-4">Column 3</div>
+    </div>
+    <div class="p-2">
+      <span class="p-2">Banter is created by <a href="https://sidequestvr.com/">SideQuestVR</a>.</span>
+    </div>
+    <div class="p-2 bg-black">
+      <span class="p-2 ">
+        Copyright © 2023
+      </span>
+    </div>
+  </body>
+</html>
