@@ -21,12 +21,6 @@ footer: "Copyright © 2023"
 info:
   -
     markup: "Craig Moore is <a href=\"https://www.linkedin.com/in/craigalexandermoore/\">currently available to hire</a> for Drupal and Typescript contract work."
-success:
-  -
-    markup: "Here's a sample success!"
-warning:
-  -
-    markup: "Here's a sample warning!"
-error: 
-  -
-    markup: "Here's a sample error!"
+success: []
+warning: []
+error:  []
