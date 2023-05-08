@@ -1,13 +1,13 @@
-drupal_vr:
+drupalvr:
   template: single_page.html.j2
-  url: drupal_for_vr.html
+  url: drupal-for-vr.html
   content:
       breadcrumbs:
         -
           url: index.html
           link: Home
         -
-          url: drupal_for_vr.html
+          url: drupal-for-vr.html
           link: Drupal for VR
       title: "Drupal for VR"
       header: "Using a CMS for creating VR content"
